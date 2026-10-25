@@ -5,6 +5,9 @@ public class product {
     private Long id;
     private String name;
     private double price;
+    public product (){
+
+    }
 
     public product(Long id, String name, double price) {
         this.id = id;
