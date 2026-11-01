@@ -13,7 +13,7 @@
     //public product getById(@PathVariable Long id) {
         //return new product(id, "Laptop", 999.99);
     //}
-//}
+//
 package uk.ac.westminster.products_api;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public product addProduct(@RequestBody product product) {
+    public product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
 
@@ -52,4 +52,11 @@ public class ProductController {
     public List<product> search(@RequestParam String name) {
         return productService.findByName(name);
     }
+    @GetMapping("/products/summaries")
+    public List<String> getSummaries() {
+        return productService.getAllSummaries();
+    }
 }
+
+
+
